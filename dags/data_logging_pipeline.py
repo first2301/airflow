@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 @task()
-def realistic_data_processing():
+def public_data_processing():
     logger.info("[Step 1] 데이터 소스 연결 중...")
     time.sleep(0.5)
     logger.info("데이터 소스 연결 완료")
@@ -67,6 +67,6 @@ with DAG(
 ) as dag:
 
     generate_dummy_logs = dummy_log_generator()
-    process_realistic_data = realistic_data_processing()
+    process_realistic_data = public_data_processing()
 
     generate_dummy_logs >> process_realistic_data
