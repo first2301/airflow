@@ -18,16 +18,16 @@ default_args: dict[str, Any] = {
     'retry_delay': timedelta(minutes=5),
 }
 
-# DAG 정의
 with DAG(
     dag_id='simple_data_pipeline',
     default_args=default_args,
-    description='A simple data pipeline DAG without pandas',
-    schedule_interval=timedelta(days=1),
+    description='A simple data pipeline DAG',
+    schedule=timedelta(days=1),  # ✅ 바꿔야 함!
     start_date=datetime(2024, 1, 1),
     catchup=False,
     tags=['example'],
 ) as dag:
+
 
     @task
     def collect_data() -> str:
