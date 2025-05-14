@@ -57,7 +57,7 @@ default_args = {
 }
 
 with DAG(
-    'realistic_data_pipeline',
+    'public_data_utilization_pipeline',
     default_args=default_args,
     description='데이터 처리 파이프라인',
     schedule=timedelta(hours=1),
