@@ -51,7 +51,7 @@ with DAG(
     'data_logging_pipeline',
     default_args=default_args,
     description='대량의 로그를 생성하는 데이터 파이프라인',
-    schedule_interval=timedelta(hours=1),
+    schedule=timedelta(hours=1),
     start_date=datetime(2024, 1, 1),
     catchup=False,
     tags=['logging', 'data_pipeline'],
